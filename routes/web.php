@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+//авторизация
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
