@@ -15,6 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//маршруты для административной части
+Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['auth']], function (){
+    Route::get('/', 'IndexController@index')->name('home');
+});
+
+
+
+
 //авторизация
 Auth::routes();
 
